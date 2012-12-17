@@ -1,8 +1,10 @@
-require "vagrant-hostruby/version"
+require "vagrant"
 
 module Vagrant
   module Provisioners
     class Hostruby < Base
+
+      VERSION = "0.0.1"
 
       class Config < Config::Base
         attr_accessor :prepare

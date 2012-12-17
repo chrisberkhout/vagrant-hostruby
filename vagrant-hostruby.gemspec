@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'vagrant-hostruby/version'
+require "vagrant-hostruby"
 
 Gem::Specification.new do |gem|
   gem.name          = "vagrant-hostruby"
-  gem.version       = Vagrant::Hostruby::VERSION
+  gem.version       = Vagrant::Provisioners::Hostruby::VERSION
   gem.authors       = ["Chris Berkhout"]
   gem.email         = ["chrisberkhout@gmail.com"]
   gem.description   = %q{Provision Vagrant boxes with Ruby (on the host machine)}
@@ -16,5 +16,7 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency("vagrant")
 end
 
